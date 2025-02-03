@@ -1,0 +1,16 @@
+youtube:
+  download:
+    output_dir: "downloads"
+    video:
+      format: "worst[ext=mp4]"
+      postprocess:
+        enabled: false
+        video_scale: "320:-1"
+        video_bitrate: "128k"
+        audio_bitrate: "32k"
+    subtitles:
+      enabled: true
+      auto_generate: true
+      languages:
+        - "en"
+        - "zh-Hant"
