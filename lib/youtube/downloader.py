@@ -1,16 +1,13 @@
 import yt_dlp
 import os
-import yaml
 from typing import Dict, Optional
 from urllib.parse import parse_qs, urlparse
 from ..ffmpeg.extractor import FFmpegExtractor
 
 class YouTubeDownloader:
-    def __init__(self, config_path: str = "config.yaml"):
-        # Load config
-        with open(config_path, 'r') as f:
-            config = yaml.safe_load(f)
-            yt_config = config['youtube']['download']
+    def __init__(self, config):
+        
+        yt_config = config['youtube_downloader']
         
         self.output_dir = yt_config['output_dir']
         os.makedirs(self.output_dir, exist_ok=True)

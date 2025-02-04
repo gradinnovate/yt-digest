@@ -1,6 +1,7 @@
 import os
 import sys
 from pathlib import Path
+import yaml
 
 # Add project root to Python path
 project_root = Path(__file__).parent.parent
@@ -11,7 +12,9 @@ from lib.youtube.downloader import YouTubeDownloader
 def test_download():
     # Initialize downloader with config
     config_path = os.path.join(project_root, "config.yaml")
-    downloader = YouTubeDownloader(config_path)
+    with open(config_path) as f:
+        config = yaml.safe_load(f)
+    downloader = YouTubeDownloader(config)
     
     # Test URL
     url = "https://www.youtube.com/watch?v=pmljvWUrm0I"

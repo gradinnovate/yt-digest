@@ -62,3 +62,11 @@ The backend is organized into the following library modules:
 
 Each module will be responsible for a specific part of the processing pipeline, making the system modular and maintainable.
 
+| Step | Feasibility | Challenges | Solutions |
+|------|------------|------------|-----------|
+| Download YouTube Video | ✅ High | Copyright & API Changes | yt-dlp, YouTube API |
+| Download Captions | ✅ Medium | Missing Captions | Whisper, STT API |
+| Separate Audio and Video | ✅ High | Format Compatibility | FFmpeg |
+| Speech to Text | ✅ High | Processing Speed | Whisper / Google STT |
+| Text to Article | ✅ High | AI Generation Quality | GPT-4 / Prompt Design |
+| Publish Article | ✅ High | CMS API Integration | Markdown / API |
